@@ -85,7 +85,6 @@ HTML = """<!DOCTYPE html>
   .card-desc { font-size: 14px; color: var(--gray); margin-bottom: 32px; line-height: 1.5; }
   .drop-zone { border: 2px dashed var(--border); border-radius: 4px; padding: 48px 32px; text-align: center; cursor: pointer; transition: all 0.2s; background: var(--cream); position: relative; }
   .drop-zone:hover, .drop-zone.drag-over { border-color: var(--red); background: #FDF8F5; }
-  .drop-zone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
   .drop-icon { font-size: 40px; margin-bottom: 16px; display: block; }
   .drop-zone h3 { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
   .drop-zone p { font-size: 13px; color: var(--gray); }
@@ -155,8 +154,8 @@ HTML = """<!DOCTYPE html>
     <div class="card">
       <div class="card-title">Biographical Intake Form</div>
       <div class="card-desc">Upload the completed SMS Law Firm intake form — covers Part 1 (personal info) and Part 2 (spouse/children).</div>
-      <div class="drop-zone" id="dropZone">
-        <input type="file" id="fileInput" accept=".pdf">
+      <input type="file" id="fileInput" accept=".pdf" style="display:none;">
+      <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
         <span class="drop-icon">📄</span>
         <h3>Drop intake form here</h3>
         <p>or click to browse · PDF only</p>
@@ -170,8 +169,8 @@ HTML = """<!DOCTYPE html>
     <div class="card" style="padding: 32px 48px;">
       <div class="card-title" style="font-size:16px;">Supporting Documents <span style="color:var(--gray);font-size:13px;font-weight:normal;">(optional)</span></div>
       <div class="card-desc">Passport, visa, I-94, or any other biographical documents.</div>
-      <div class="drop-zone" id="docsDropZone" style="padding: 24px;">
-        <input type="file" id="docsInput" accept=".pdf,.jpg,.jpeg,.png" multiple>
+      <input type="file" id="docsInput" accept=".pdf,.jpg,.jpeg,.png" multiple style="display:none;">
+      <div class="drop-zone" id="docsDropZone" style="padding: 24px;" onclick="document.getElementById('docsInput').click()">
         <span class="drop-icon" style="font-size: 28px;">📎</span>
         <h3 style="font-size: 14px;">Drop supporting documents here</h3>
         <p>PDF, JPG, PNG · Multiple files OK</p>
