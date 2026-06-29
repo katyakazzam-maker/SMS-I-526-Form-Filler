@@ -1,0 +1,8 @@
+flask
+anthropic
+pypdf
+pymupdf
+Pillow
+img2pdf
+pdfplumber
+gunicorn
